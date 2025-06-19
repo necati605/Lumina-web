@@ -3,23 +3,46 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Lumina Panel</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Dashboard | Lumina</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+        h1 {
+            color: #00ffcc;
+        }
+        .tick {
+            cursor: pointer;
+            font-size: 24px;
+        }
+        .done {
+            text-decoration: line-through;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
-    <div class="dashboard">
-        <h1>🔥 Hoş geldin Komutan Luminam</h1>
-        <p>Bugün seni bekleyen görevler:</p>
-        <div class="tasks">
-            <div class="task" onclick="toggleTick(this)">🧊 1 Bardak Su İç <span class="tick">○</span></div>
-            <div class="task" onclick="toggleTick(this)">📚 10 Sayfa Kitap Oku <span class="tick">○</span></div>
-            <div class="task" onclick="toggleTick(this)">🤸‍♂️ 10 Squat <span class="tick">○</span></div>
-            <div class="task" onclick="toggleTick(this)">🧘 5 Dakika Meditasyon <span class="tick">○</span></div>
-        </div>
-        <div class="footer">
-            <p>💡 “Her zincir, bir kararlılıkla dövülür.” - GT-26</p>
-        </div>
-    </div>
-    <script src="script.js"></script>
+    <h1>🌟 Hoş geldin, Luminam!</h1>
+    <p>✅ Görevlerini tamamlamaya başla:</p>
+    <ul>
+        <li onclick="toggleTick(this)"><span class="tick">○</span> Su iç (1 bardak)</li>
+        <li onclick="toggleTick(this)"><span class="tick">○</span> 10 dakika kitap oku</li>
+        <li onclick="toggleTick(this)"><span class="tick">○</span> Ürün fikri düşün</li>
+    </ul>
+    <script>
+    function toggleTick(el) {
+        const span = el.querySelector('.tick');
+        if (span.classList.contains('done')) {
+            span.textContent = "○";
+            span.classList.remove('done');
+        } else {
+            span.textContent = "✓";
+            span.classList.add('done');
+        }
+    }
+    </script>
 </body>
 </html>

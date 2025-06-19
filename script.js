@@ -24,6 +24,9 @@ function login() {
     const password = document.getElementById("loginPassword").value;
     if (users[email] && users[email] === password) {
         document.getElementById("message").textContent = "🎉 Giriş başarılı! Dashboard'a yönlendiriliyorsunuz...";
+        setTimeout(() => {
+            window.location.href = "dashboard.html";
+        }, 1500);
     } else {
         document.getElementById("message").textContent = "❌ Hatalı e-posta veya şifre.";
     }
