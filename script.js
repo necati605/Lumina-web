@@ -9,3 +9,7 @@ function toggleTick(el) {
         span.classList.add('done');
     }
 }
+function showDashboard() {
+    document.querySelector('form').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'block';
+}

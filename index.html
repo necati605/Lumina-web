@@ -8,23 +8,21 @@
 </head>
 <body>
     <div class="container">
-        <h1>✨ Lumina POV'a Hoş Geldin, Işığın Yolcusu!</h1>
-        <form onsubmit="event.preventDefault(); window.location.href='../dashboard/dashboard.html';">
+        <h1>✨ Lumina POV'a Hoş Geldin</h1>
+        <form onsubmit="event.preventDefault(); showDashboard();">
             <input type="text" placeholder="👤 İsim" required>
             <input type="email" placeholder="📧 E-posta" required>
             <input type="password" placeholder="🔒 Şifre" required>
-            <input type="text" placeholder="🔑 Kod (isteğe bağlı)">
-            <button type="submit">🚪 Giriş Yap / Kayıt Ol</button>
+            <button type="submit">🚪 Giriş Yap</button>
         </form>
-        <p class="divider">veya</p>
-        <div class="social-login">
-            <button>🔗 Google ile Giriş</button>
-            <button>❌ X ile Giriş</button>
-            <button>📘 Facebook ile Giriş</button>
+        <div id="dashboard" style="display:none;">
+            <h2>🔥 Günlük Görevler</h2>
+            <div class="task" onclick="toggleTick(this)">🧊 Su İç <span class="tick">○</span></div>
+            <div class="task" onclick="toggleTick(this)">📚 Kitap Oku <span class="tick">○</span></div>
+            <div class="task" onclick="toggleTick(this)">🤸‍♂️ Squat <span class="tick">○</span></div>
+            <div class="task" onclick="toggleTick(this)">🧘 Meditasyon <span class="tick">○</span></div>
         </div>
-        <footer>
-            <p>📜 Gizlilik • 💳 İade • 📞 Destek</p>
-        </footer>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

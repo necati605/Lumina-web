@@ -1,22 +1,16 @@
 
 body {
-    margin: 0;
-    height: 100vh;
     background: linear-gradient(to bottom, #1e1e1e, #2a2a2a);
     color: white;
     font-family: 'Segoe UI', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 .container {
-    width: 100%;
-    max-width: 400px;
-    background: #333;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #000;
-    text-align: center;
+    padding: 40px;
+    max-width: 500px;
+    margin: auto;
 }
 input, button {
     display: block;
@@ -24,7 +18,7 @@ input, button {
     margin: 10px auto;
     padding: 10px;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 6px;
     border: none;
 }
 input {
@@ -34,20 +28,22 @@ input {
 button {
     background: #4CAF50;
     color: white;
+}
+.task {
+    background: #333;
+    padding: 12px;
+    margin: 10px auto;
+    max-width: 400px;
+    border-radius: 10px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-button:hover {
-    background: #45a049;
-}
-.divider {
-    margin: 20px 0;
-}
-.social-login button {
-    background: #444;
-    margin-bottom: 10px;
-}
-footer {
-    font-size: 12px;
+.tick {
+    font-size: 24px;
     color: #aaa;
-    margin-top: 20px;
+}
+.tick.done {
+    color: #4CAF50;
 }
