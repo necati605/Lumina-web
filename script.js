@@ -1,5 +1,40 @@
 
+let users = {};
 let water = 0.00;
+
+function toggleAuth(type) {
+    document.getElementById("loginForm").style.display = type === 'login' ? "block" : "none";
+    document.getElementById("registerForm").style.display = type === 'register' ? "block" : "none";
+    document.getElementById("dashboard").style.display = "none";
+}
+
+function register() {
+    const email = document.getElementById("registerEmail").value;
+    const password = document.getElementById("registerPassword").value;
+    if (users[email]) {
+        alert("⚠️ Bu e-posta zaten kayıtlı.");
+    } else {
+        users[email] = password;
+        alert("✅ Kayıt başarılı! Giriş yapabilirsiniz.");
+        toggleAuth('login');
+    }
+}
+
+function login() {
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+    if (users[email] && users[email] === password) {
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("registerForm").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
+    } else {
+        alert("❌ Hatalı e-posta veya şifre.");
+    }
+}
+
+function forgotPassword() {
+    alert("📨 Şifre sıfırlama bağlantısı gönderildi (simülasyon).");
+}
 
 function toggleTask(el) {
     const detail = el.querySelector('.detail');
