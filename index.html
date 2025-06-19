@@ -3,33 +3,53 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Lumina | Giriş</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol - Lumina</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="auth-wrapper">
-        <div class="auth-container">
-            <div class="auth-tabs">
-                <button onclick="toggleAuth('login')">Giriş Yap</button>
-                <button onclick="toggleAuth('register')">Kayıt Ol</button>
-                <button onclick="toggleTheme()">🌗 Tema</button>
-            </div>
+    <div class="form-container">
+        <h2>Kayıt Ol</h2>
+        <form>
+            <input type="text" placeholder="Adınız*" required>
+            <input type="text" placeholder="Soyadınız*" required>
+            <input type="email" placeholder="E-Posta Adresiniz*" required>
+            <input type="tel" placeholder="Telefon Numaranız*" required>
+            <input type="password" placeholder="Şifreniz*" required>
+            <input type="password" placeholder="Şifre Tekrar*" required>
+            <select required>
+                <option value="">Ülke Seçin</option>
+                <option value="Türkiye">Türkiye</option>
+                <option value="Diğer">Diğer</option>
+            </select>
+            <select required>
+                <option value="">Şehir Seçin</option>
+                <option value="İstanbul">İstanbul</option>
+                <option value="Ankara">Ankara</option>
+                <option value="İzmir">İzmir</option>
+            </select>
+            <select required>
+                <option value="">Cinsiyet Seçin</option>
+                <option value="Erkek">Erkek</option>
+                <option value="Kadın">Kadın</option>
+                <option value="Belirtmek istemiyorum">Belirtmek istemiyorum</option>
+            </select>
+            <label>Doğum Tarihi*</label>
+            <input type="date" required>
 
-            <div id="loginForm" class="auth-box">
-                <input type="email" placeholder="E-posta" id="loginEmail">
-                <input type="password" placeholder="Şifre" id="loginPassword">
-                <button onclick="login()">Giriş</button>
-                <p class="link" onclick="forgotPassword()">Şifremi Unuttum</p>
-            </div>
+            <label class="checkbox">
+                <input type="checkbox" required>
+                <span>Gizlilik sözleşmesini okudum ve kabul ediyorum.</span>
+            </label>
 
-            <div id="registerForm" class="auth-box" style="display:none;">
-                <input type="email" placeholder="E-posta" id="registerEmail">
-                <input type="password" placeholder="Şifre" id="registerPassword">
-                <button onclick="register()">Kayıt Ol</button>
-            </div>
+            <button type="submit">Kayıt Ol</button>
+        </form>
+
+        <div class="social-login">
+            <p>veya sosyal medya ile devam et</p>
+            <button class="google">Google ile Devam Et</button>
+            <button class="facebook">Facebook ile Devam Et</button>
         </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
