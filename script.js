@@ -1,24 +1,34 @@
 
-function showDashboard() {
-    document.getElementById('loginSection').style.display = 'none';
-    document.getElementById('dashboardSection').style.display = 'block';
+let users = {};
+
+function toggleAuth(type) {
+    document.getElementById("loginForm").style.display = type === 'login' ? "block" : "none";
+    document.getElementById("registerForm").style.display = type === 'register' ? "block" : "none";
+    document.getElementById("message").textContent = "";
 }
 
-function completeTask(el) {
-    const span = el.querySelector('.tick');
-    if (!span.classList.contains('done')) {
-        span.textContent = "✓";
-        span.classList.add('done');
-        document.getElementById('completionMessage').style.display = 'block';
-        setTimeout(() => {
-            document.getElementById('completionMessage').style.display = 'none';
-        }, 2000);
+function register() {
+    const email = document.getElementById("registerEmail").value;
+    const password = document.getElementById("registerPassword").value;
+    if (users[email]) {
+        document.getElementById("message").textContent = "⚠️ Bu e-posta zaten kayıtlı.";
     } else {
-        span.textContent = "○";
-        span.classList.remove('done');
+        users[email] = password;
+        document.getElementById("message").textContent = "✅ Başarıyla kayıt oldunuz. Giriş yapabilirsiniz.";
+        toggleAuth('login');
     }
 }
 
-function toggleTheme() {
-    document.body.classList.toggle('light-mode');
+function login() {
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+    if (users[email] && users[email] === password) {
+        document.getElementById("message").textContent = "🎉 Giriş başarılı! Dashboard'a yönlendiriliyorsunuz...";
+    } else {
+        document.getElementById("message").textContent = "❌ Hatalı e-posta veya şifre.";
+    }
+}
+
+function forgotPassword() {
+    document.getElementById("message").textContent = "📨 Şifre sıfırlama bağlantısı gönderildi (simülasyon).";
 }
