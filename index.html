@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kayıt Ol - Lumina</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function registerWithGoogle() {
+            alert("✅ Google hesabınızla başarıyla kayıt oldunuz!");
+        }
+        function registerWithFacebook() {
+            alert("✅ Facebook hesabınızla başarıyla kayıt oldunuz!");
+        }
+    </script>
 </head>
 <body>
     <div class="form-container">
@@ -19,17 +27,14 @@
             <input type="password" placeholder="Şifre Tekrar*" required>
             <select required>
                 <option value="">Ülke Seçin</option>
-                <option value="Türkiye">Türkiye</option>
-                <option value="Almanya">Almanya</option>
-                <option value="Fransa">Fransa</option>
-                <option value="ABD">ABD</option>
-                <option value="İngiltere">İngiltere</option>
-                <option value="Kanada">Kanada</option>
-                <option value="Hollanda">Hollanda</option>
-                <option value="Japonya">Japonya</option>
-                <option value="İsveç">İsveç</option>
-                <option value="İtalya">İtalya</option>
-                <option value="İspanya">İspanya</option>
+                <option>Türkiye</option><option>ABD</option><option>Almanya</option><option>Fransa</option>
+                <option>İngiltere</option><option>Kanada</option><option>İsveç</option><option>İtalya</option>
+                <option>İspanya</option><option>Norveç</option><option>Hollanda</option><option>Belçika</option>
+                <option>Avustralya</option><option>Yeni Zelanda</option><option>Brezilya</option><option>Rusya</option>
+                <option>Çin</option><option>Japonya</option><option>Güney Kore</option><option>Hindistan</option>
+                <option>İsviçre</option><option>Avusturya</option><option>Finlandiya</option><option>Danimarka</option>
+                <option>Meksika</option><option>Arjantin</option><option>Şili</option><option>Portekiz</option>
+                <option>Yunanistan</option><option>Polonya</option><option>Macaristan</option><option>Çekya</option>
             </select>
             <select required>
                 <option value="">Şehir Seçin</option>
@@ -72,8 +77,8 @@
 
         <div class="social-login">
             <p>veya sosyal medya ile kayıt ol</p>
-            <button class="google">Google ile Kayıt Ol</button>
-            <button class="facebook">Facebook ile Kayıt Ol</button>
+            <button class="google" onclick="registerWithGoogle()">Google ile Kayıt Ol</button>
+            <button class="facebook" onclick="registerWithFacebook()">Facebook ile Kayıt Ol</button>
         </div>
     </div>
 </body>
