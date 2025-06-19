@@ -3,26 +3,48 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Lumina Giriş</title>
+    <title>Lumina Giriş & Görev Paneli</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>✨ Lumina POV'a Hoş Geldin</h1>
-        <form onsubmit="event.preventDefault(); showDashboard();">
-            <input type="text" placeholder="👤 İsim" required>
-            <input type="email" placeholder="📧 E-posta" required>
-            <input type="password" placeholder="🔒 Şifre" required>
-            <button type="submit">🚪 Giriş Yap</button>
-        </form>
-        <div id="dashboard" style="display:none;">
-            <h2>🔥 Günlük Görevler</h2>
-            <div class="task" onclick="toggleTick(this)">🧊 Su İç <span class="tick">○</span></div>
-            <div class="task" onclick="toggleTick(this)">📚 Kitap Oku <span class="tick">○</span></div>
-            <div class="task" onclick="toggleTick(this)">🤸‍♂️ Squat <span class="tick">○</span></div>
-            <div class="task" onclick="toggleTick(this)">🧘 Meditasyon <span class="tick">○</span></div>
-        </div>
+    <div class="theme-toggle">
+        <button onclick="toggleTheme()">🌓</button>
     </div>
-    <script src="script.js"></script>
+
+    <div class="container" id="loginSection">
+        <h1>✨ Lumina'ya Hoş Geldin</h1>
+        <input type="text" placeholder="👤 İsim" required>
+        <input type="email" placeholder="📧 E-posta" required>
+        <input type="password" placeholder="🔒 Şifre" required>
+        <input type="file" accept="image/*">
+        <div class="social-buttons">
+            <button>🔗 Google</button>
+            <button>❌ X</button>
+            <button>📘 Facebook</button>
+        </div>
+        <button onclick="showDashboard()">🚪 Giriş Yap</button>
+    </div>
+
+    <div class="container" id="dashboardSection" style="display:none;">
+        <div class="hamburger">☰</div>
+        <h2>📜 Gün 1: Zincirin Başlangıcı</h2>
+        <p class="mentor">GT-26: “Her zincir bir adımla başlar.”</p>
+
+        <div class="task-list">
+            <div class="task" onclick="completeTask(this)">💧 Su İç <span class="tick">○</span></div>
+            <div class="task" onclick="completeTask(this)">📚 10 Sayfa Kitap Oku <span class="tick">○</span></div>
+            <div class="task" onclick="completeTask(this)">🤸‍♂️ 15 Squat <span class="tick">○</span></div>
+            <div class="task" onclick="completeTask(this)">🧘 5 Dakika Nefes Meditasyonu <span class="tick">○</span></div>
+        </div>
+
+        <div class="action-note">
+            ✍️ <strong>Ben Ne Yapacağım?</strong>
+            <textarea placeholder="Bugünkü görev için kendi adımımı yazıyorum..."></textarea>
+        </div>
+
+        <div id="completionMessage" class="complete-banner" style="display:none;">✅ Görev başarıyla tamamlandı!</div>
+    </div>
+
+<script src="script.js"></script>
 </body>
 </html>
