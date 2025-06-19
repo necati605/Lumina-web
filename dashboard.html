@@ -2,47 +2,35 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard | Lumina</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            padding: 30px;
-        }
-        h1 {
-            color: #00ffcc;
-        }
-        .tick {
-            cursor: pointer;
-            font-size: 24px;
-        }
-        .done {
-            text-decoration: line-through;
-            color: #888;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Dashboard | Lumina</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>🌟 Hoş geldin, Luminam!</h1>
-    <p>✅ Görevlerini tamamlamaya başla:</p>
-    <ul>
-        <li onclick="toggleTick(this)"><span class="tick">○</span> Su iç (1 bardak)</li>
-        <li onclick="toggleTick(this)"><span class="tick">○</span> 10 dakika kitap oku</li>
-        <li onclick="toggleTick(this)"><span class="tick">○</span> Ürün fikri düşün</li>
-    </ul>
-    <script>
-    function toggleTick(el) {
-        const span = el.querySelector('.tick');
-        if (span.classList.contains('done')) {
-            span.textContent = "○";
-            span.classList.remove('done');
-        } else {
-            span.textContent = "✓";
-            span.classList.add('done');
-        }
-    }
-    </script>
+  <div class="top-bar">
+    <div class="water-tracker">💧 Günlük Su: <span id="waterAmount">0.00</span> / 3.00 L</div>
+    <div class="theme-toggle"><button onclick="toggleTheme()">🌗</button></div>
+  </div>
+
+  <h1>🗓️ Gün 1 – Başlangıç Çağrısı</h1>
+
+  <div class="task" onclick="toggleTask(this)">
+    ✅ Su iç (1 bardak)
+    <div class="detail">Bu görevde sabah kalkınca 1 bardak su içerek vücudunu uyandır.</div>
+  </div>
+
+  <div class="task" onclick="toggleTask(this)">
+    📚 10 dk kitap oku
+    <div class="detail">Bugün kişisel gelişimin için en az 10 dakika kitap oku.</div>
+  </div>
+
+  <div class="task" onclick="toggleTask(this)">
+    🔍 Görev panosunu incele
+    <div class="detail">Lumina zincirini tanımak için tüm görevleri gözden geçir.</div>
+  </div>
+
+  <div id="completionMessage" class="success-msg">🎉 Görev başarıyla tamamlandı!</div>
+
+  <script src="script.js"></script>
 </body>
 </html>

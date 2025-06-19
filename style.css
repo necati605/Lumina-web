@@ -1,42 +1,56 @@
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1e1e1e;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 20px;
 }
-.auth-container {
-    background: #2d2d2d;
-    padding: 30px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
+.light-mode {
+    background-color: #f4f4f4;
+    color: #111;
 }
-input, button {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+h1 {
+    margin-bottom: 20px;
 }
-button {
+.task {
+    background: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-left: 5px solid #00ffcc;
+}
+.task .detail {
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 8px;
+    display: none;
+}
+.task.done {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+.success-msg {
+    display: none;
     background: #4CAF50;
     color: white;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.water-tracker {
+    font-size: 16px;
+}
+.theme-toggle button {
+    background: none;
+    color: white;
+    font-size: 18px;
+    border: none;
     cursor: pointer;
-}
-button:hover {
-    background: #45a049;
-}
-.auth-toggle button {
-    width: 48%;
-    margin: 5px 1%;
-    background: #444;
-}
-.link {
-    color: #00BFFF;
-    cursor: pointer;
-    text-decoration: underline;
 }

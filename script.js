@@ -1,37 +1,35 @@
 
-let users = {};
+let water = 0.00;
 
-function toggleAuth(type) {
-    document.getElementById("loginForm").style.display = type === 'login' ? "block" : "none";
-    document.getElementById("registerForm").style.display = type === 'register' ? "block" : "none";
-    document.getElementById("message").textContent = "";
-}
-
-function register() {
-    const email = document.getElementById("registerEmail").value;
-    const password = document.getElementById("registerPassword").value;
-    if (users[email]) {
-        document.getElementById("message").textContent = "⚠️ Bu e-posta zaten kayıtlı.";
+function toggleTask(el) {
+    const detail = el.querySelector('.detail');
+    const isDone = el.classList.contains('done');
+    if (!isDone) {
+        el.classList.add('done');
+        if (el.textContent.includes("Su iç")) {
+            water += 0.25;
+            document.getElementById("waterAmount").textContent = water.toFixed(2);
+        }
+        detail.style.display = "block";
+        showCompletionMessage();
     } else {
-        users[email] = password;
-        document.getElementById("message").textContent = "✅ Başarıyla kayıt oldunuz. Giriş yapabilirsiniz.";
-        toggleAuth('login');
+        el.classList.remove('done');
+        if (el.textContent.includes("Su iç")) {
+            water = Math.max(0, water - 0.25);
+            document.getElementById("waterAmount").textContent = water.toFixed(2);
+        }
+        detail.style.display = "none";
     }
 }
 
-function login() {
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
-    if (users[email] && users[email] === password) {
-        document.getElementById("message").textContent = "🎉 Giriş başarılı! Dashboard'a yönlendiriliyorsunuz...";
-        setTimeout(() => {
-            window.location.href = "dashboard.html";
-        }, 1500);
-    } else {
-        document.getElementById("message").textContent = "❌ Hatalı e-posta veya şifre.";
-    }
+function showCompletionMessage() {
+    const msg = document.getElementById("completionMessage");
+    msg.style.display = "block";
+    setTimeout(() => {
+        msg.style.display = "none";
+    }, 2000);
 }
 
-function forgotPassword() {
-    document.getElementById("message").textContent = "📨 Şifre sıfırlama bağlantısı gönderildi (simülasyon).";
+function toggleTheme() {
+    document.body.classList.toggle("light-mode");
 }
