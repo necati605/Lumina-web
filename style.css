@@ -1,67 +1,15 @@
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-.form-container {
-    background: white;
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 400px;
-}
-h2 {
+    background-color: #f8f9fa;
     text-align: center;
+    padding: 50px;
+}
+h1 {
+    color: #6c63ff;
+    margin-bottom: 20px;
+}
+p {
+    font-size: 18px;
     color: #333;
-}
-form {
-    display: flex;
-    flex-direction: column;
-}
-input, select {
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-}
-button {
-    padding: 12px;
-    margin-top: 10px;
-    background: #6c63ff;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-button:hover {
-    background: #574fd6;
-}
-.social-login {
-    text-align: center;
-    margin-top: 20px;
-}
-.google {
-    background: white;
-    color: black;
-    border: 1px solid #ccc;
-}
-.facebook {
-    background: #1877F2;
-    color: white;
-}
-.checkbox {
-    margin: 10px 0;
-    font-size: 14px;
-}
-.checkbox input {
-    margin-right: 10px;
 }
