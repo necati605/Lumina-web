@@ -1,1 +1,77 @@
-body { background-color: #121212; color: white; font-family: sans-serif; }
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: white;
+}
+.light-mode {
+    background-color: #f4f4f4;
+    color: #111;
+}
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.auth-container {
+    width: 100%;
+    max-width: 500px;
+    background: #1e1e1e;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+.light-mode .auth-container {
+    background: #ffffff;
+    color: #111;
+}
+.auth-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.auth-tabs button,
+.auth-box button {
+    flex: 1;
+    height: 60px;
+    font-size: 18px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #00BFFF;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.auth-box input {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    background: #333;
+    color: white;
+    font-size: 16px;
+}
+.auth-box button {
+    background: #00cc66;
+    margin-top: 15px;
+}
+.light-mode .auth-box input {
+    background: #e0e0e0;
+    color: #000;
+}
+.light-mode .auth-box button {
+    background: #007744;
+}
+.link {
+    text-align: right;
+    font-size: 14px;
+    color: #bbb;
+    cursor: pointer;
+}

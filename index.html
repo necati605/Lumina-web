@@ -1,1 +1,35 @@
-<!DOCTYPE html><html><head><title>Lumina</title></head><body><h1>Yükleniyor...</h1></body></html>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Lumina | Giriş</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button onclick="toggleAuth('login')">Giriş Yap</button>
+                <button onclick="toggleAuth('register')">Kayıt Ol</button>
+                <button onclick="toggleTheme()">🌗 Tema</button>
+            </div>
+
+            <div id="loginForm" class="auth-box">
+                <input type="email" placeholder="E-posta" id="loginEmail">
+                <input type="password" placeholder="Şifre" id="loginPassword">
+                <button onclick="login()">Giriş</button>
+                <p class="link" onclick="forgotPassword()">Şifremi Unuttum</p>
+            </div>
+
+            <div id="registerForm" class="auth-box" style="display:none;">
+                <input type="email" placeholder="E-posta" id="registerEmail">
+                <input type="password" placeholder="Şifre" id="registerPassword">
+                <button onclick="register()">Kayıt Ol</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
