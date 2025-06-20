@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TosTLand - Kayıt / Giriş</title>
+  <link rel="stylesheet" href="style_auth.css">
+</head>
+<body>
+  <div class="auth-container">
+    <h1>🔐 TosTLand</h1>
+    <div class="tabs">
+      <button onclick="showTab('login')">Giriş Yap</button>
+      <button onclick="showTab('register')">Kayıt Ol</button>
+    </div>
+
+    <div id="login" class="tab-content">
+      <form>
+        <input type="email" placeholder="E-posta Adresi" required>
+        <input type="password" placeholder="Şifre" required>
+        <button type="submit">Giriş Yap</button>
+      </form>
+    </div>
+
+    <div id="register" class="tab-content" style="display:none">
+      <form>
+        <input type="text" placeholder="Ad Soyad" required>
+        <input type="email" placeholder="E-posta Adresi" required>
+        <input type="tel" placeholder="Telefon Numarası" required>
+        <input type="password" placeholder="Şifre" required>
+        <input type="password" placeholder="Şifre Tekrar" required>
+        <label><input type="checkbox" required> Kullanım koşullarını okudum ve onaylıyorum.</label>
+        <button type="submit">Kayıt Ol</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function showTab(tab) {
+      document.getElementById('login').style.display = tab === 'login' ? 'block' : 'none';
+      document.getElementById('register').style.display = tab === 'register' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
